@@ -1,0 +1,29 @@
+﻿<Window x:Name="frmLastReadBook" x:Class="Amazon_Services_Toolkit.LastReadBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Amazon_Services_Toolkit"
+        mc:Ignorable="d"
+        Title="Last Read Book" Height="618.63" Width="800" Icon=".\assets\lastbook.png" Loaded="frmLastReadBook_Loaded">
+    <Grid Margin="0,0,-6.4,0" Height="555" VerticalAlignment="Top">
+        <StatusBar DockPanel.Dock="Bottom"  VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="0,0,0,-26">
+            <StatusBarItem>
+                <Label Content="Marvin de Lara - 301091991 @ Centennial College. All images and logos are not mine." />
+            </StatusBarItem>
+            <Button x:Name="btnLogo" Height="20" Width="80" HorizontalAlignment="Right" Click="btnLogo_Click">
+                <Image Source=".\assets\CentennialCollegeIcon.jpg" Stretch="Fill"/>
+            </Button>
+        </StatusBar>
+        <Image x:Name="imgCoverPage" HorizontalAlignment="Left" Height="442" Margin="52,53,0,0" VerticalAlignment="Top" Width="321" Stretch="UniformToFill"/>
+        <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="64" Margin="387,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="360" FontSize="22" BorderBrush="White" Foreground="#FF127973" FontWeight="Bold" IsReadOnly="True" SelectionBrush="White"/>
+        <TextBox x:Name="txtBookDetails" HorizontalAlignment="Left" Height="119" Margin="388,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="360" BorderBrush="White" FontSize="14" IsReadOnly="True" SelectionBrush="White"/>
+        <Button HorizontalAlignment="Left" Margin="389,256,0,0" VerticalAlignment="Top" Width="75" Height="47" Background="White" BorderBrush="White" Click="Button_Click_Shop">
+            <Image Source=".\assets\shopping-cart.png" Height="44" Width="70"></Image>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="466,256,0,0" VerticalAlignment="Top" Width="75" Height="47" Background="White" BorderBrush="White" Click="Button_Click_Donate">
+            <Image Source=".\assets\donation.png" Height="44" Width="70"></Image>
+        </Button>
+        <Button Content="Continue Reading" HorizontalAlignment="Left" Margin="388,311,0,0" VerticalAlignment="Top" Background="#FF127973" Foreground="White" FontWeight="Bold" BorderBrush="#FF127973" Width="279" Height="44" FontSize="14" Click="Button_Click_Continue_Reading" />
+    </Grid>
+</Window>

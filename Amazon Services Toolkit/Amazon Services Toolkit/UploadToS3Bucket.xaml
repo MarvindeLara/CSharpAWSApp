@@ -1,0 +1,33 @@
+﻿<Window x:Name="frmUpload" x:Class="Amazon_Services_Toolkit.UploadToS3Bucket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Amazon_Services_Toolkit"
+        mc:Ignorable="d"
+        Title="Upload to S3 Bucket" Height="484.4" Width="756.8" Icon=".\assets\upload.png" Loaded="frmUpload_Loaded">
+    <Grid Margin="0,0,-6.6,0">
+        <TextBox x:Name="txtPath" HorizontalAlignment="Left" Height="61" Margin="36,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="538"/>
+        <Button HorizontalAlignment="Left" Margin="586,32,0,0" VerticalAlignment="Top" Width="29" Background="White" Click="Button_Click_Browse" BorderBrush="White">
+            <Image Source=".\assets\folder.png" Height="20" Width="19"></Image>
+        </Button>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="629,32,0,0" VerticalAlignment="Top" Width="75" Height="23" FontSize="14" Background="#FF127973" Foreground="White" FontWeight="Bold" Click="Button_Click_Add" BorderBrush="#FF127973"/>
+        <DataGrid x:Name="dtgObjects" Margin="36,114,44,122.2" VerticalScrollBarVisibility="Visible" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Object Name" Width="537" Binding="{Binding FileName}"/>
+                <DataGridTextColumn Header="Upload Status" Width="*" Binding="{Binding Status}"/>
+            </DataGrid.Columns>
+        </DataGrid >
+        <Label Content="Choose bucket name :" HorizontalAlignment="Left" Margin="30,350,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Foreground="#FF127973"/>
+        <ComboBox x:Name="cbxBuckets" HorizontalAlignment="Left" Margin="193,354,0,0" VerticalAlignment="Top" Width="381" Height="23" SelectionChanged="cbxBuckets_SelectionChanged"/>
+        <Button Content="Upload" HorizontalAlignment="Left" Margin="588,354,0,0" VerticalAlignment="Top" Width="116" Height="23" FontSize="14" Background="#FF127973" Foreground="White" FontWeight="Bold" Click="Button_Click_Upload" BorderBrush="#FF127973"/>
+        <StatusBar DockPanel.Dock="Bottom"  VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+            <StatusBarItem>
+                <Label Content="Marvin de Lara - 301091991 @ Centennial College. All images and logos are not mine." />
+            </StatusBarItem>
+            <Button x:Name="btnLogo" Height="20" Width="80" HorizontalAlignment="Right" Click="btnLogo_Click">
+                <Image Source=".\assets\CentennialCollegeIcon.jpg" Stretch="Fill"/>
+            </Button>
+        </StatusBar>
+    </Grid>
+</Window>

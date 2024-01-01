@@ -1,0 +1,50 @@
+﻿<Window x:Name="frmPDFViewWindow" x:Class="Amazon_Services_Toolkit.PDFViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Amazon_Services_Toolkit"
+        mc:Ignorable="d"
+        Title="E-Book Reader" Height="740.886" Width="1219.571" Icon=".\assets\ereader.png" Loaded="frmPDFViewWindow_Loaded" Closed="frmPDFViewWindow_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Height="20">
+                <MenuItem x:Name="mnuTitle" Header="Title:">
+                </MenuItem>
+            </Menu>
+            <ToolBarTray DockPanel.Dock="Top" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                <ToolBar Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" ToolBarTray.IsLocked="True" Loaded="ToolBar_Loaded" ToolBar.OverflowMode="Never">
+                    <Button ToolTip="Bookmark current page." Click="Button_Click_Bookmark">
+                        <Image Source=".\assets\bookmark.png" Height="20" />
+                    </Button>
+                    <Button ToolTip="Go to previous page." Click="Button_Click_Previous">
+                        <Image Source=".\assets\previous.png" Height="20" />
+                    </Button>
+                    <TextBox x:Name="txtCurrentPage" Width="60" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="#FF127973" FontWeight="Bold" BorderBrush="#FFD8FA8F" KeyUp="txtCurrentPage_KeyUp" SelectionBrush="#FF127973" />
+                    <Label Width="20" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="#FF127973" FontWeight="Bold" Content="/"/>
+                    <TextBox x:Name="txtTotalNumberPages" Width="60" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="#FF127973" FontWeight="Bold" BorderBrush="#FFD8FA8F" IsReadOnly="True" SelectionBrush="#FF127973"/>
+                    <Button ToolTip="Go to next page." Click="Button_Click_Next">
+                        <Image Source=".\assets\next.png" Width="20"></Image>
+                    </Button>
+                </ToolBar>
+            </ToolBarTray>
+            <StatusBar DockPanel.Dock="Bottom"  VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="0,0,-0.2,0">
+                <StatusBarItem>
+                    <Label Content="Marvin de Lara - 301091991 @ Centennial College. All images and logos are not mine." />
+                </StatusBarItem>
+                <Button x:Name="btnLogo" Height="20" Width="80" HorizontalAlignment="Right" Click="btnLogo_Click">
+                    <Image Source=".\assets\CentennialCollegeIcon.jpg" Stretch="Fill"/>
+                </Button>
+            </StatusBar>
+            <DockPanel>
+                <TextBlock  Height="621" Width="200" Background="#FFD3D1D1"/>
+                <WebBrowser x:Name="webPDFViewer" Height="621" Width="810" LoadCompleted="webPDFViewer_LoadCompleted"/>
+                <TextBlock  Height="621" Width="200" Background="#FFD3D1D1"/>
+            </DockPanel>
+        </DockPanel>
+    </Grid>
+</Window>

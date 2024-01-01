@@ -1,0 +1,24 @@
+﻿<Window x:Class="Amazon_Services_Toolkit.LogIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Amazon_Services_Toolkit"
+        mc:Ignorable="d"
+        Title="Log In" Height="441.2" Width="355.973" Icon=".\assets\user.png">
+    <Grid Margin="0,0,3.6,-3">
+        <Image HorizontalAlignment="Left" Height="100" Margin="122,33,0,0" VerticalAlignment="Top" Width="100" Source=".\assets\amazon.png"/>
+        <Label Content="Amazon Cloud Services" HorizontalAlignment="Left" Margin="70,138,0,0" VerticalAlignment="Top" Width="270" FontWeight="Bold" FontSize="18" Foreground="Black"/>
+        <Label Content="Username:" HorizontalAlignment="Left" Margin="15,200,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold" FontSize="14" Foreground="#FF127973"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="15,235,0,0" VerticalAlignment="Top" Width="92" FontWeight="Bold" FontSize="14" Foreground="#FF127973"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="97,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" SelectionBrush="#FF127973"/>
+        <PasswordBox x:Name="txtPasswordHidden" HorizontalAlignment="Left" Margin="97,240,0,0" VerticalAlignment="Top" Width="221" Height="23" PasswordChar="*" MaxLength="25" SelectionBrush="#FF127973"/>
+        <Button Content="Register" HorizontalAlignment="Left" Margin="21,278,0,0" VerticalAlignment="Top" Width="142" Height="50" FontSize="14" Background="#FF127973" Foreground="White" FontWeight="Bold" BorderBrush="#FF127973" Click="Button_Click_Register"/>
+        <Button Content="Log In" HorizontalAlignment="Left" Margin="176,278,0,0" VerticalAlignment="Top" Width="142" Height="50" FontSize="14" Background="#FF127973" Foreground="White" FontWeight="Bold" BorderBrush="#FF127973" Click="Button_Click_LogIn"/>
+        <StatusBar DockPanel.Dock="Bottom"  VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+            <StatusBarItem>
+                <Label Content="All images and logos are not mine." />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

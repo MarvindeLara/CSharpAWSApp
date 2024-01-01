@@ -1,0 +1,24 @@
+﻿<Window x:Name="frmDownload" x:Class="Amazon_Services_Toolkit.DownloadFromS3Bucket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Amazon_Services_Toolkit"
+        mc:Ignorable="d"
+        Title="Download From S3 Bucket" Height="174.8" Width="631.2" Icon=".\assets\download.png" Loaded="frmDownload_Loaded">
+    <Grid Margin="0,0,-6.2,9.6">
+        <Label Content="File name : " HorizontalAlignment="Left" Margin="19,23,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Foreground="#FF127973"/>
+        <TextBox x:Name="txtFileName" HorizontalAlignment="Left" Height="23" Margin="128,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="314"/>
+        <Label Content="Bucket name : " HorizontalAlignment="Left" Margin="19,57,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Foreground="#FF127973"/>
+        <ComboBox x:Name="cbxBuckets" HorizontalAlignment="Left" Margin="128,61,0,0" VerticalAlignment="Top" Width="314" Height="23" SelectionChanged="cbxBuckets_SelectionChanged"/>
+        <Button Content="Download" HorizontalAlignment="Left" Margin="455,26,0,0" VerticalAlignment="Top" Width="133" Height="58" FontSize="14" Background="#FF127973" Foreground="White" FontWeight="Bold" Click="Button_Click_DownloadFromS3Bucket" BorderBrush="#FF127973"/>
+        <StatusBar DockPanel.Dock="Bottom"  VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="-3,0,3,-10.8">
+            <StatusBarItem>
+                <Label Content="Marvin de Lara - 301091991 @ Centennial College. All images and logos are not mine." />
+            </StatusBarItem>
+            <Button x:Name="btnLogo" Height="20" Width="80" HorizontalAlignment="Right" Click="btnLogo_Click">
+                <Image Source=".\assets\CentennialCollegeIcon.jpg" Stretch="Fill"/>
+            </Button>
+        </StatusBar>
+    </Grid>
+</Window>

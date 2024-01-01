@@ -1,0 +1,36 @@
+﻿<Window x:Name="frmAddToBookshelf" x:Class="Amazon_Services_Toolkit.AddToBookshelf"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Amazon_Services_Toolkit"
+        mc:Ignorable="d"
+        Title="Add To Bookshelf" Height="618.63" Width="800" Icon=".\assets\addbook.png" Loaded="frmAddToBookshelf_Loaded">
+    <Grid Margin="0,0,-6.4,0" Height="555" VerticalAlignment="Top">
+        <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="23" Margin="34,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="423" SelectionBrush="#FF127973"/>
+        <Button Content="Search By Title" HorizontalAlignment="Left" Margin="470,37,0,0" VerticalAlignment="Top" Width="133" Height="23" FontSize="14" Background="#FF127973" Foreground="White" FontWeight="Bold" BorderBrush="#FF127973" Click="Button_Click_Search"/>
+        <Button Content="Show All" HorizontalAlignment="Left" Margin="616,37,0,0" VerticalAlignment="Top" Width="133" Height="23" FontSize="14" Background="#FF127973" Foreground="White" FontWeight="Bold" BorderBrush="#FF127973" Click="Button_Click_Show_All"/>
+        <DataGrid x:Name="dtgBookCatalogue" Margin="34,82,43,0" VerticalScrollBarVisibility="Visible" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" Height="360" VerticalAlignment="Top" HeadersVisibility="Column">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="Add?" Width="37" Binding="{Binding Path=ToAdd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTemplateColumn  Header="Book Cover" Width="230" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding CoverPage}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Book Details" Width="430" Binding="{Binding BookDetails}"/>
+            </DataGrid.Columns>
+        </DataGrid >
+        <Button Content="Add" HorizontalAlignment="Left" Margin="616,462,0,0" VerticalAlignment="Top" Width="133" Height="44" FontSize="14" Background="#FF127973" Foreground="White" FontWeight="Bold" BorderBrush="#FF127973" Click="Button_Click_Add"/>
+        <StatusBar DockPanel.Dock="Bottom"  VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Margin="0,0,0,-26">
+            <StatusBarItem>
+                <Label Content="Marvin de Lara - 301091991 @ Centennial College. All images and logos are not mine." />
+            </StatusBarItem>
+            <Button x:Name="btnLogo" Height="20" Width="80" HorizontalAlignment="Right" Click="btnLogo_Click">
+                <Image Source=".\assets\CentennialCollegeIcon.jpg" Stretch="Fill"/>
+            </Button>
+        </StatusBar>
+    </Grid>
+</Window>
